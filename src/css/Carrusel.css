@@ -1,0 +1,17 @@
+/* Contenedor del carrusel */
+.carrusel-container {
+  width: 100%;          
+  height: 400px;        
+  margin: 0 auto;       
+  overflow: hidden;
+  
+  position: relative;
+}
+
+/* Imagen del carrusel */
+.imagenes-carrusel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

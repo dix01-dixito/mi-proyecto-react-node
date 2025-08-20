@@ -1,0 +1,105 @@
+/* para que no se vea mal los componentes que ponga xd */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  /*header */
+}
+.header {
+    display: flex;
+    align-items: center;
+    background: #FAFAFA;
+    justify-content: space-between;
+    padding: 12px 30px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+/*logo*/
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #335c67;
+    cursor: pointer;
+}
+.logo-imagen {
+    height: 40px;
+    margin-right: 5px;
+}
+/* botones del header */
+.botones{
+    text-align: center;
+    display: flex;
+    gap: 20px;
+}
+
+.botones a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #540b0e;
+    transition: color 0.3s ease;
+}
+
+.botones a:hover{
+    color: #00afb9;
+}
+/*barra de busqueda */
+.barra-busqueda {
+    display: flex;
+    flex: 1;
+    margin: 0 20px;
+    max-width: 500px;
+}
+
+.barra-busqueda input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    outline: none;
+}
+
+.barra-busqueda input:focus {
+    border-color: #d6ccc2;
+}
+
+.barra-busqueda button {
+    padding: 8px 15px;
+    background: #d6ccc2;
+    color: #fff;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+}
+.barra-busqueda button:hover {
+    background: #a5a58d;
+}
+/*carrito de compras */
+.carrito {
+    position: relative;
+    cursor: pointer;
+    color: #a47e1b;
+    transition: color 0.3s ease;
+}
+
+.carrito:hover {
+    color: #d9bf77;
+}
+
+.carrito-conteo {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: #6e0d25;
+    color: white;
+    font-size: 0.8rem;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
