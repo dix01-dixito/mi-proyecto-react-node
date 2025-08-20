@@ -2,9 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 
 
-import Header from './Header';
-import Carrusel from './Carrusel';
-import Productos from './Productos';
+import Header from './js/Header';
+import Carrusel from './js/Carrusel';
+import Productos from './js/Productos';
+import Footer from './js/Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -12,6 +13,7 @@ root.render(
     <Header />
     <Carrusel />
     <Productos />
+    <Footer />
     
   </React.StrictMode>
 );

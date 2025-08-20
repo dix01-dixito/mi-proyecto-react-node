@@ -22,11 +22,14 @@ html, body {
     z-index: 1000;
 }
 /*logo*/
-.logo {
-    font-size: 1.8rem;
+.logo-titulo {
+    font-family: "Georgia", "Times New Roman", serif;
+    font-size: 1.5rem;
     font-weight: bold;
-    color: #335c67;
+    color: #12647b;
     cursor: pointer;
+    margin: 10px;
+    
 }
 .logo-imagen {
     height: 40px;
@@ -34,9 +37,10 @@ html, body {
 }
 /* botones del header */
 .botones{
-    text-align: center;
+
+    text-align: left;
     display: flex;
-    gap: 20px;
+    gap: 30px;
 }
 
 .botones a {
@@ -49,38 +53,7 @@ html, body {
 .botones a:hover{
     color: #00afb9;
 }
-/*barra de busqueda */
-.barra-busqueda {
-    display: flex;
-    flex: 1;
-    margin: 0 20px;
-    max-width: 500px;
-}
 
-.barra-busqueda input {
-    flex: 1;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    border-right: none;
-    border-radius: 6px 0 0 6px;
-    outline: none;
-}
-
-.barra-busqueda input:focus {
-    border-color: #d6ccc2;
-}
-
-.barra-busqueda button {
-    padding: 8px 15px;
-    background: #d6ccc2;
-    color: #fff;
-    border: none;
-    border-radius: 0 6px 6px 0;
-    cursor: pointer;
-}
-.barra-busqueda button:hover {
-    background: #a5a58d;
-}
 /*carrito de compras */
 .carrito {
     position: relative;

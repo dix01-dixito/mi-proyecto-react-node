@@ -1,5 +1,5 @@
 import React from "react";
-import './css/Productos.css';
+import '../css/Catalogo.css';
 
 const Catalogo = [
     {

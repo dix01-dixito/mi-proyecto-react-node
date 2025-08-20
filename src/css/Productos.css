@@ -27,7 +27,8 @@
 
 .tarjeta{
 
-    background-color: #fff;
+    border-color: #200;
+    background-color: #f0f0f0;
     border-radius: 10px;
     box-shadow: 0 2px 6px rgb(0,0,0,00.3);
     overflow: hidden;
@@ -35,7 +36,7 @@
 }
 
 .tarjeta:hover {
-    transform: translateY(-5px);
+    transform: translateY(-15px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }   
 
@@ -51,7 +52,7 @@
 .cuerpo-tarjetas {
 
     padding: 16px;
-    background-color: ;
+    
 
 }
 
@@ -77,7 +78,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 8px;
-    max-resolution: 10px;
+    
 
 }
 

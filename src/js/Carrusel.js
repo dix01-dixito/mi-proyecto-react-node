@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import './css/Carrusel.css';
+import '../css/Carrusel.css';
 
 const imagenes = [
     "/img/banner.png",
