@@ -1,7 +1,7 @@
 import React from "react";
 import '../css/Catalogo.css';
 
-const Catalogo = [
+const productos = [
     {
         id: 1,
         nombre: "Eros Flame",
@@ -30,6 +30,34 @@ const Catalogo = [
         imagen: "/img/lemaleparfum.png",
         href: "#",
     },
+     {
+        id: 5,
+        nombre: "Le male Parfum",
+        precio: 399.99,
+        imagen: "/img/lemaleparfum.png",
+        href: "#",
+    },
+     {
+        id: 6,
+        nombre: "Le male Parfum",
+        precio: 399.99,
+        imagen: "/img/lemaleparfum.png",
+        href: "#",
+    },
+     {
+        id: 7,
+        nombre: "Le male Parfum",
+        precio: 399.99,
+        imagen: "/img/lemaleparfum.png",
+        href: "#",
+    },
+     {
+        id: 8,
+        nombre: "Le male Parfum",
+        precio: 399.99,
+        imagen: "/img/lemaleparfum.png",
+        href: "#",
+    },
 ];
 
 export default function Catalogo(){
@@ -40,7 +68,7 @@ export default function Catalogo(){
 return (
 
     <section className="contenedor-tarjetas">
-        <h2 className="titulos-tarjetas">Perfumes Destacados</h2>
+        <h2 className="titulos-tarjetas">Catalogo de Perfumes</h2>
 
         <div className="grid">
             {productos.map((producto) => (

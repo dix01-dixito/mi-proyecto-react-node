@@ -12,7 +12,7 @@ import '../css/Header.css';
              </div>
               <nav className='botones'>
                 <a href='#'>Inicio</a>
-                <a href='#'>Categorías</a>
+                <a href='#'>Catalogo</a>
                 <a href='#'>Ofertas</a>
                 <a href='#'>Contacto</a>
              </nav>

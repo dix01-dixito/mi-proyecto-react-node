@@ -12,7 +12,7 @@ function Carrusel() {
 
 useEffect(() => { const interval = setInterval(()=> {
     setC(Math.floor(Math.random() * imagenes.length));
-},1500);
+},5000);
 return () => clearInterval(interval);},[]);
 
 return (
