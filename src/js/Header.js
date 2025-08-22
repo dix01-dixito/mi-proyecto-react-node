@@ -1,4 +1,4 @@
-import react from 'react';
+import { Link } from 'react-router-dom';
 import { FaShoppingCart} from 'react-icons/fa';
 import '../css/Header.css';
 
@@ -11,10 +11,10 @@ import '../css/Header.css';
              <span className='logo-titulo'>EssencePerfume</span>
              </div>
               <nav className='botones'>
-                <a href='#'>Inicio</a>
-                <a href='#'>Catalogo</a>
-                <a href='#'>Ofertas</a>
-                <a href='#'>Contacto</a>
+                <Link to="/">Inicio</Link>
+                <Link to="/Catalogo">Catalogo</Link>
+                <Link to="/Ofertas">Ofertas</Link>
+                <Link to="/Contacto">Contacto</Link>
              </nav>
 
             
