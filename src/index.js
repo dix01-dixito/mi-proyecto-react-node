@@ -6,6 +6,7 @@ import Header from './js/Header';
 import Carrusel from './js/Carrusel';
 import Productos from './js/Productos';
 import Footer from './js/Footer';
+import Carrito from './js/Carrito';
 
 const Home = () => {
   const isLoggedIn = localStorage.getItem('currentUser');
@@ -15,11 +16,9 @@ const Home = () => {
   } //Redirige al login si no hay usuario logueado
 
   return (
-    <>
-      <Header />
+    <>      
       <Carrusel />
       <Productos />
-      <Footer />
     </>
   );
 };
@@ -28,10 +27,13 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Header />
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/" element={<Home />} />
+        <Route path="/carrito" element={<Carrito />} />
       </Routes>
+    <Footer />
     </BrowserRouter>
   </React.StrictMode>
 );

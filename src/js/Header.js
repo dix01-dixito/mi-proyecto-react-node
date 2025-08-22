@@ -1,5 +1,6 @@
 import react from 'react';
 import { FaShoppingCart} from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 import '../css/Header.css';
 
     function Header() {
@@ -20,8 +21,10 @@ import '../css/Header.css';
             
 
             <div className='carrito'>
+                <Link to="carrito">
                 <FaShoppingCart size={24} />
                 <span className='carrito-conteo'>$</span>
+                </Link>
             </div>
             </header>
         );
