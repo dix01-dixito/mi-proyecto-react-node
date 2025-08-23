@@ -3,10 +3,12 @@ import Footer from "./Footer";
 import { getOfertas} from "./Data";
 import { Link } from "react-router-dom";
 import '../css/Productos.css';
+import { agregarAlCarrito } from './Carrito';
 
 export default function Ofertas(){
     const productos = getOfertas ()
-    const agregarAlcarrito = (producto) => {
+    const handleAgregarCarrito = (producto) => {
+        agregarAlCarrito(producto);
         alert(`Agregaste al carrito: ${producto.nombre}`);
     };
 
@@ -26,7 +28,7 @@ return (
                     <p className="tarjeta-p">S/ {producto.precio.toFixed(2)}</p>
                     <div className="tarjeta-botones">
                         <Link className="tarjeta-boton1" to={`/producto/${producto.id}`}>Mas información</Link>
-                        <button className="tarjeta-boton2" onClick={() => agregarAlcarrito(producto)}>Agregar al carrito</button>
+                        <button className="tarjeta-boton2" onClick={() => handleAgregarCarrito(producto)}>Agregar al carrito</button>
                     </div>
                 </div>
             </article>    

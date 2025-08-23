@@ -26,38 +26,42 @@ class Login extends Component
         });
     }
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        const { username, password, isRegistering } = this.state; 
+handleSubmit = (e) => {
+    e.preventDefault();
+    const { username, password, isRegistering } = this.state; 
 
-        if (isRegistering) {
-            // Verificar si el usuario ya existe
-            const users = JSON.parse(localStorage.getItem('users') || '[]'); 
-            if (users.find(user => user.username === username)) {
-                this.setState({ error: 'El usuario ya existe' });
-                return;
-            }
+    if (isRegistering) {
+        // Registration mode
+        const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+        const userExists = existingUsers.some(user => user.username === username);
 
-            // Registrar nuevo usuario
-            users.push({ username, password });
-            localStorage.setItem('users', JSON.stringify(users)); // Guardar usuarios en localStorage
-            this.setState({ 
-                error: '', 
-                isRegistering: false,
-                username: '',
-                password: ''
-            }); 
-            alert('Usuario registrado exitosamente');
+        if (userExists) {
+            this.setState({ error: 'El usuario ya existe' });
+            return;
+        }
 
+        // Register new user
+        const newUser = { username, password };
+        existingUsers.push(newUser);
+        localStorage.setItem('users', JSON.stringify(existingUsers));
+        
+        this.setState({ 
+            error: '', 
+            isRegistering: false,
+            username: '',
+            password: ''
+        }); 
+        alert('Usuario registrado exitosamente');
         } else {
-            // Verificar credenciales
-            const users = JSON.parse(localStorage.getItem('users') || '[]');
-            const user = users.find(u => u.username === username && u.password === password);
-            
-            if (user) {
-                // Guardar sesión actual
+            // Login mode
+            const existingUsers = JSON.parse(localStorage.getItem('users') || '[]');
+            const userExists = existingUsers.find(user => 
+                user.username === username && user.password === password
+            );
+
+            if (userExists) {
                 localStorage.setItem('currentUser', username);
-                this.setState({ redirect: true });
+                window.dispatchEvent(new Event("login"));
             } else {
                 this.setState({ error: 'Usuario o contraseña incorrectos' });
             }
@@ -127,10 +131,11 @@ class Login extends Component
                 userCaptcha: ''
             });
         }
-    }
+    };
 
     render() {
-        if (this.state.redirect) {
+
+        if (localStorage.getItem("currentUser")) {
             return <Navigate to="/" />;
         }
         return (
@@ -220,6 +225,6 @@ class Login extends Component
                 )}
             </div>
         );
-    }
+    };
 }
 export default Login;

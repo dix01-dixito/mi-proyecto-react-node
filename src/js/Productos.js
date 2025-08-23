@@ -2,11 +2,13 @@ import React from "react";
 import '../css/Productos.css';
 import { getDestacados } from "./Data";
 import { Link } from "react-router-dom";
+import { agregarAlCarrito } from './Carrito';
 
 
 export default function Productos(){
     const productos = getDestacados();
-    const agregarAlcarrito = (producto) => {
+    const handleAgregarCarrito = (producto) => {
+        agregarAlCarrito(producto);
         alert(`Agregaste al carrito: ${producto.nombre}`);
     };
 
@@ -24,8 +26,8 @@ return (
                     <h3 className="tarjeta-nombres">{producto.nombre}</h3>
                     <p className="tarjeta-p">S/ {producto.precio.toFixed(2)}</p>
                     <div className="tarjeta-botones">
-                         <Link className="tarjeta-boton1" to={`/producto/${producto.id}`}>Mas información</Link>
-                        <button className="tarjeta-boton2" onClick={() => agregarAlcarrito(producto)}>Agregar al carrito</button>
+                        <Link className="tarjeta-boton1" to={`/producto/${producto.id}`}>Mas información</Link>
+                        <button className="tarjeta-boton2" onClick={() => handleAgregarCarrito(producto)}>Agregar al carrito</button>
                     </div>
                 </div>
             </article>    
