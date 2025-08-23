@@ -1,6 +1,22 @@
 import React, { Component } from 'react';
 import '../css/Carrito.css';
 
+// Función para agregar productos al carrito (reutilizar codigo)
+export const agregarAlCarrito = (producto) => {
+    const userId = localStorage.getItem('currentUser') || 'anonimo';
+    const data = localStorage.getItem(`carrito_${userId}`);
+    const carritoActual = data ? JSON.parse(data) : [];
+    
+    const productoConCantidad = {
+        ...producto,
+        cantidad: 1,
+        subtotal: producto.precio
+    };
+    
+    const nuevoCarrito = [...carritoActual, productoConCantidad];
+    localStorage.setItem(`carrito_${userId}`, JSON.stringify(nuevoCarrito));
+};
+
 class Carrito extends Component {
     constructor(props) {
         super(props);
@@ -33,18 +49,6 @@ class Carrito extends Component {
         }));
     };
 
-    agregarAlCarrito = (producto) => {
-        const productoConCantidad = {
-            ...producto,
-            cantidad: 1,
-            subtotal: producto.precio
-        };
-        
-        this.setState((prevState) => ({
-            carrito: [...prevState.carrito, productoConCantidad],
-        }));
-    };
-
     eliminarDelCarrito = (indice) => {
         this.setState((prevState) => ({
             carrito: prevState.carrito.filter((_, i) => i !== indice),
@@ -61,14 +65,15 @@ class Carrito extends Component {
             showModalSuccess: true 
         }, () => {
             console.log('Modal mostrada:', this.state.showModalSuccess); // Para debugging
-            setTimeout(() => {
-                this.setState({ 
-                    showModalSuccess: false,
-                    carrito: []
-                });
-            }, 2000);
         });
     };
+
+    cerrarModal = () => {
+        this.setState({
+            showModalSuccess: false,
+            carrito: []
+        });
+    }
 
     render() {
         return (
@@ -139,6 +144,7 @@ class Carrito extends Component {
                 {this.state.showModalSuccess && (
                     <div className="modal-overlay">
                         <div className="modal-content">
+                            <button className="close-button" onClick={this.cerrarModal}/>
                             <div className="success-checkmark">
                                 <div className="check-icon">
                                     <span className="icon-line line-tip"></span>

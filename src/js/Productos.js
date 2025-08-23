@@ -1,39 +1,14 @@
 import React from "react";
 import '../css/Productos.css';
+import { getDestacados } from "./Data";
+import { Link } from "react-router-dom";
+import { agregarAlCarrito } from './Carrito';
 
-const productos = [
-    {
-        id: 1,
-        nombre: "Eros Flame",
-        precio: 399.99,
-        imagen: "/img/eros.png",
-        href: "#",
-    },
-     {
-        id: 2,
-        nombre: "212 VIP",
-        precio: 399.99,
-        imagen: "/img/212vip.png",
-        href: "#",
-    },
-     {
-        id: 3,
-        nombre: "Valentino",
-        precio: 399.99,
-        imagen: "/img/valentino.png",
-        href: "#",
-    },
-     {
-        id: 4,
-        nombre: "Le male Parfum",
-        precio: 399.99,
-        imagen: "/img/lemaleparfum.png",
-        href: "#",
-    },
-];
 
 export default function Productos(){
-    const agregarAlcarrito = (producto) => {
+    const productos = getDestacados();
+    const handleAgregarCarrito = (producto) => {
+        agregarAlCarrito(producto);
         alert(`Agregaste al carrito: ${producto.nombre}`);
     };
 
@@ -51,8 +26,8 @@ return (
                     <h3 className="tarjeta-nombres">{producto.nombre}</h3>
                     <p className="tarjeta-p">S/ {producto.precio.toFixed(2)}</p>
                     <div className="tarjeta-botones">
-                        <button className="tarjeta-boton1" onClick={() => window.location.href = producto.href}>Mas Informacion</button>
-                        <button className="tarjeta-boton2" onClick={() => agregarAlcarrito(producto)}>Agregar al carrito</button>
+                        <Link className="tarjeta-boton1" to={`/producto/${producto.id}`}>Mas información</Link>
+                        <button className="tarjeta-boton2" onClick={() => handleAgregarCarrito(producto)}>Agregar al carrito</button>
                     </div>
                 </div>
             </article>    
