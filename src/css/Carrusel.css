@@ -1,11 +1,15 @@
 /* Contenedor del carrusel */
 .carrusel-container {
-  width: 100%;          
+  
+  width: 100%;
+  padding: 20px;          
   height: 400px;        
   margin: 0 auto;       
   overflow: hidden;
-  
   position: relative;
+  border-radius: 30px;
+
+
 }
 
 /* Imagen del carrusel */

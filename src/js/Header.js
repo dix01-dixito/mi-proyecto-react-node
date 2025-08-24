@@ -1,5 +1,4 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { FaShoppingCart} from 'react-icons/fa';
 import { useState } from 'react';
 
 import '../css/Header.css';
@@ -25,7 +24,6 @@ import '../css/Header.css';
                 <Link to="/">Inicio</Link>
                 <Link to="/Catalogo">Catalogo</Link>
                 <Link to="/Ofertas">Ofertas</Link>
-                <Link to="/Contacto">Contacto</Link>
             </nav>
             <div className="user-menu">
                 <Link to="/carrito" className="cart-button">🛒</Link>

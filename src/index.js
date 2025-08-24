@@ -8,7 +8,6 @@ import Productos from './js/Productos';
 import Footer from './js/Footer';
 import Catalogo from './js/Catalogo';
 import Ofertas from './js/Ofertas';
-import Contacto from './js/Contacto';
 import Carrito from './js/Carrito';
 
 const Layout = () => {
@@ -43,7 +42,6 @@ const Layout = () => {
         <Route path="/carrito" element={isLoggedIn ? <Carrito /> : <Navigate to="/login" />} />
         <Route path="/catalogo" element={isLoggedIn ? <Catalogo /> : <Navigate to="/login" />} />
         <Route path="/ofertas" element={isLoggedIn ? <Ofertas /> : <Navigate to="/login" />} />
-        <Route path="/contacto" element={isLoggedIn ? <Contacto /> : <Navigate to="/login" />} />
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>
       {isLoggedIn && <Footer />}

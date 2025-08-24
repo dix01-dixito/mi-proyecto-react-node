@@ -12,9 +12,9 @@
     display: flex;
     align-items: center;
     padding: 15px;
-    border: 1px solid #ddd;
+    border: 1px solid #051213;
     border-radius: 8px;
-    background: white;
+    background: #0b6465;
 }
 .producto-item img {
     width: 80px;
@@ -27,16 +27,16 @@
 }
 .producto-info h3 {
     margin: 0;
-    color: #333;
+    color: #0c2b35;
 }
 .producto-info p {
     margin: 5px 0;
-    color: #666;
+    color: #0c2b35;
 }
 .eliminar-btn {
     padding: 8px 15px;
     background-color: #ff4444;
-    color: white;
+    color: #e8ebec;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -44,14 +44,14 @@
 .carrito-total {
     margin-top: 20px;
     padding: 20px;
-    background: #f8f8f8;
+    background: #0b6465;
     border-radius: 8px;
     text-align: right;
 }
 .pagar-btn {
     padding: 10px 20px;
     background-color: #4CAF50;
-    color: white;
+    color: #e8ebec;
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -67,12 +67,13 @@
     width: 30px;
     height: 30px;
     border: 1px solid #ddd;
-    background: #f8f8f8;
+    background: #e8ebec;
     border-radius: 4px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    color: #000;
 }
 .cantidad-input {
     width: 50px;
@@ -121,7 +122,7 @@
 
 .modal-content {
     position: relative;
-    background: white;
+    background: #0b6465;
     padding: 40px;
     border-radius: 10px;
     text-align: center;
@@ -316,4 +317,12 @@
     color: #4CAF50;
     font-size: 24px;
     animation: fadeIn 0.5s ease-out 0.3s both;
+}
+
+.titulo-carrito {
+    text-align: center;
+    color: #2272FF;
+    font-size: 3rem;
+    margin-bottom: 18px;
+    
 }

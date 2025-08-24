@@ -1,8 +1,6 @@
-import Header from "./Header";
-import Footer from "./Footer";
 import { getCatalogo } from "./Data";
 import { Link } from "react-router-dom";
-import '../css/Catalogo.css';
+import '../css/Productos.css';
 import { agregarAlCarrito } from './Carrito';
 
 

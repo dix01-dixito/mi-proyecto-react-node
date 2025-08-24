@@ -79,7 +79,7 @@ class Carrito extends Component {
         return (
             <>
                 <div className="carrito-container">
-                    <h2>Carrito de compras</h2>
+                    <h2 className='titulo-carrito'>Carrito de compras</h2>
                     {this.state.carrito.length === 0 ? (
                         <p>Tu carrito está vacío</p>
                     ) : (

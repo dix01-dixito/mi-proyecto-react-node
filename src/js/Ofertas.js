@@ -1,5 +1,4 @@
-import Header from "./Header";
-import Footer from "./Footer";
+
 import { getOfertas} from "./Data";
 import { Link } from "react-router-dom";
 import '../css/Productos.css';
@@ -13,7 +12,6 @@ export default function Ofertas(){
     };
 
 return (
-    <>        <Header />
 
     <section className="contenedor-tarjetas">
         <h2 className="titulos-tarjetas">Pack de perfumes en OFERTA</h2>
@@ -36,7 +34,6 @@ return (
 
         </div>
     </section>
-    <Footer />
-    </>
+
  );
 }
